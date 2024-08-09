@@ -1,4 +1,5 @@
 from fasthtml.common import *
+import random
 
 app,rt = fast_app()
 
@@ -6,6 +7,9 @@ app,rt = fast_app()
 def get(): return Div(P('Hello World!'), hx_get="/change")
 
 @rt('/change')
-def get(): return P('Nice to be here!')
+
+def get(): 
+    texts = ['Nice to be here!', 'Hello World!', 'It\'s so random!']
+    return Div(P(random.choice(texts)), hx_get="/change")
 
 serve()
