@@ -1,15 +1,14 @@
 from fasthtml.common import *
 import random
 
-app,rt = fast_app()
+app = FastHTML()
 
-@rt('/')
-def get(): return Div(P('Hello World!'), hx_get="/change")
+@app.route('/')
+def get(): return Div(P('Hello World!'), hx_get="/change", hx_swap="beforebegin")
 
-@rt('/change')
-
+@app.route('/change')
 def get(): 
     texts = ['Nice to be here!', 'Hello World!', 'It\'s so random!']
     return Div(P(random.choice(texts)), hx_get="/change")
 
-serve()
+# serve()
