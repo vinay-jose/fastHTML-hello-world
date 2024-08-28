@@ -4,6 +4,8 @@ RUN useradd -m -u 1000 user
 USER user
 ENV PATH="/home/user/.local/bin:$PATH"
 
+RUN pip install --upgrade pip
+
 WORKDIR /app
 
 COPY --chown=user ./requirements.txt requirements.txt
