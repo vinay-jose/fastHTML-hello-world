@@ -11,4 +11,4 @@ def get():
     texts = ['Nice to be here!', 'Hello World!', 'It\'s so random!']
     return Div(P(random.choice(texts)), hx_get="/change")
 
-# serve()
+serve()
