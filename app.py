@@ -4,7 +4,7 @@ import random
 app = FastHTML()
 
 @app.route('/')
-def get(): return Div(P('Hello World!'), hx_get="/change", hx_swap="beforebegin")
+def get(): return Div(P('Hello World!!!'), hx_get="/change", hx_swap="beforebegin")
 
 @app.route('/change')
 def get(): 
